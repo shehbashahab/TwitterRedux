@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codepath.apps.TwitterRedux.activities.TimelineActivity">
+
+    <item
+        android:id="@+id/action_compose_tweet"
+        android:orderInCategory="100"
+        android:title="@string/action_compose_tweet"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/miProfile"
+        android:icon="@drawable/ic_profile"
+        android:onClick="onProfileView"
+        android:orderInCategory="100"
+        android:title="Profile"
+        app:showAsAction="ifRoom" />
+
+</menu>
