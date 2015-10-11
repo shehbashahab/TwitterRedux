@@ -30,7 +30,7 @@ public class Utilities {
         return relativeDate;
     }
 
-    public static String getAbbreviatedTimeSpan(long timeMillis) {
+    private static String getAbbreviatedTimeSpan(long timeMillis) {
         long span = Math.max(System.currentTimeMillis() - timeMillis, 0);
         if (span >= DateUtils.YEAR_IN_MILLIS) {
             return (span / DateUtils.YEAR_IN_MILLIS) + ABBR_YEAR;

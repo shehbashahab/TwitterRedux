@@ -15,7 +15,7 @@ public class Tweet {
 
     // Deserialize the JSON and build tweet objects
     // Tweet.fromJSON("{...}"} => <TWEET>
-    public static Tweet fromJSON(JSONObject jsonObject) {
+    private static Tweet fromJSON(JSONObject jsonObject) {
         Tweet tweet = new Tweet();
         // Extract the values from the json, and store them
         try {

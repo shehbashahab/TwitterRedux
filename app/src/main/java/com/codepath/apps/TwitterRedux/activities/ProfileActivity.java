@@ -20,20 +20,16 @@ import org.json.JSONObject;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TwitterClient client;
-    User user;
-    String username = null;
+    private TwitterClient client;
+    private User user;
+    private String username = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-
-        // If user icon
         username = getIntent().getStringExtra("screen_name");
-
-
         client = TwitterApplication.getRestClient();
 
         if (username == null) {

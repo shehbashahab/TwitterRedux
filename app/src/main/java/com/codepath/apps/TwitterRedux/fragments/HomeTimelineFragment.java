@@ -12,9 +12,6 @@ import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/**
- * Created by shehba.shahab on 10/9/15.
- */
 public class HomeTimelineFragment extends TweetsListFragment {
 
     private TwitterClient client;
@@ -60,16 +57,6 @@ public class HomeTimelineFragment extends TweetsListFragment {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 Log.d("DEBUG", "errorResponse: " + errorResponse.toString());
                 Log.d("DEBUG", "onFailure statusCode: " + statusCode);
-            }
-        });
-    }
-
-    private void postTweet(String tweetBody) {
-        // SUCCESS
-        client.postTweet(tweetBody, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject success) {
-                populateTimeline();
             }
         });
     }

@@ -4,12 +4,10 @@
     <string name="app_name">TwitterRedux</string>
     <string name="login_label">Connect to Twitter</string>
     <string name="title_activity_timeline">Twitter</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_compose_tweet">Tweet</string>
-    <string name="title_activity_compose_tweet">ComposeTweetActivity</string>
     <string name="label_full_name">Full Name</string>
     <string name="label_username">Username</string>
     <string name="label_created_at">Created At</string>
     <string name="label_tweet">Tweet</string>
-    <string name="instructional_text">Compose Tweet</string>
+    <string name="btnCancel">Cancel</string>
 </resources>

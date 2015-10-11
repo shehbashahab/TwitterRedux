@@ -19,7 +19,7 @@ import utils.EndlessScrollListener;
 
 public abstract class TweetsListFragment extends Fragment {
 
-    protected TweetsArrayAdapter aTweets;
+    TweetsArrayAdapter aTweets;
     private ArrayList<Tweet> tweets;
     //private SwipeRefreshLayout swipeContainer;
     private ListView lvTweets;
@@ -54,7 +54,7 @@ public abstract class TweetsListFragment extends Fragment {
     }
 
 
-    public void addAll(List<Tweet> tweets) {
+    void addAll(List<Tweet> tweets) {
         aTweets.addAll(tweets);
     }
 
