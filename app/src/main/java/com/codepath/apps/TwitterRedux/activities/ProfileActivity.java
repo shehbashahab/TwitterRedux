@@ -22,46 +22,72 @@ public class ProfileActivity extends AppCompatActivity {
 
     TwitterClient client;
     User user;
+    String username = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+
+        // If user icon
+        username = getIntent().getStringExtra("screen_name");
+
+
         client = TwitterApplication.getRestClient();
 
-        //Get the account info
-        client.getUserInfo(new JsonHttpResponseHandler() {
-            // SUCCESS
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                user = User.fromJSON(response);
-                // My current user account's info
-                getSupportActionBar().setTitle("@" + user.getScreenName());
-                populateProfileHeader(user);
-            }
+        if (username == null) {
+            //Get the account info
+            client.getCurrentUserInfo(new JsonHttpResponseHandler() {
+                // SUCCESS
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    user = User.fromJSON(response);
+                    username = user.getScreenName();
 
-            // FAILURE
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Log.d("DEBUG", "errorResponse: " + errorResponse.toString());
-                Log.d("DEBUG", "onFailure statusCode: " + statusCode);
-            }
-        });
+                    // My current user account's info
+                    getSupportActionBar().setTitle("@" + username);
+                    populateProfileHeader(user);
+                }
 
+                // FAILURE
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("DEBUG", "errorResponse: " + errorResponse.toString());
+                    Log.d("DEBUG", "onFailure statusCode: " + statusCode);
+                }
+            });
+        } else {
+            //Get the account info
+            client.getUserInfo(username, new JsonHttpResponseHandler() {
+                // SUCCESS
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    user = User.fromJSON(response);
+                    getSupportActionBar().setTitle("@" + username);
+                    populateProfileHeader(user);
+                }
 
-        // Get the screen name from the activity that launches this
-        String screenName = getIntent().getStringExtra("screen_name");
+                // FAILURE
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("DEBUG", "errorResponse: " + errorResponse.toString());
+                    Log.d("DEBUG", "onFailure statusCode: " + statusCode);
+                }
+            });
+
+        }
         if (savedInstanceState == null) {
+            //if (username == null) username = getIntent().getStringExtra("screen_name");
 
             // Create the user timeline fragment
-            UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(screenName);
+            UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(username);
 
             // Display user fragment within this activity (dynamically)
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.flContainer, fragmentUserTimeline);
             ft.commit(); // changes the fragments
         }
-
     }
 
     private void populateProfileHeader(User user) {
@@ -75,6 +101,6 @@ public class ProfileActivity extends AppCompatActivity {
         tvFullName.setText(user.getName().toString());
         tvBio.setText(user.getTagline().toString());
         tvFollowers.setText(String.valueOf(user.getFollowersCount()) + " Followers");
-        tvFollowing.setText(String.valueOf(user.getFriendsCount()) + " Followings");
+        tvFollowing.setText(String.valueOf(user.getFriendsCount()) + " Following");
     }
 }

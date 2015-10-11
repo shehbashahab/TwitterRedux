@@ -31,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/ivProfile"
-        android:text="Name"
         android:textSize="16sp" />
 
     <TextView
@@ -40,35 +39,32 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tvFullName"
         android:layout_below="@+id/tvFullName"
-        android:text="Tagline"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/tvFollowers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ivProfile"
-        android:layout_below="@+id/ivProfile"
-        android:layout_marginTop="10dp"
-        android:text="3 Followers"
         android:textSize="12sp" />
 
     <TextView
         android:id="@+id/tvFollowing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvFollowers"
+        android:layout_alignLeft="@+id/ivProfile"
+        android:layout_below="@+id/ivProfile"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvFollowers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvFollowing"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/tvFollowers"
-        android:text="4 Following"
+        android:layout_toRightOf="@+id/tvFollowing"
         android:textSize="12sp" />
 
     <FrameLayout
-        android:layout_marginTop="10dp"
         android:id="@+id/flContainer"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvFollowing"></FrameLayout>
+        android:layout_below="@+id/tvFollowing"
+        android:layout_marginTop="10dp"></FrameLayout>
 </RelativeLayout>
