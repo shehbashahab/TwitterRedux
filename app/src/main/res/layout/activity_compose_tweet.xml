@@ -10,8 +10,7 @@
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnCancel"
-        android:onClick="dimissActivity"/>
+        android:text="@string/btnCancel"/>
 
     <TextView
         android:id="@+id/tvCharCount"
@@ -22,13 +21,13 @@
         android:id="@+id/btnTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tweet" />
+        android:text="@string/label_tweet" />
 
     <EditText
         android:id="@+id/etTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="What's happening?"
+        android:hint="@string/tweet_instructional_text"
         android:imeOptions="actionDone"
         android:inputType="textMultiLine"
         android:lines="6"

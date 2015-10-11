@@ -34,11 +34,13 @@ public class ComposeTweetActivity extends AppCompatActivity {
         public void afterTextChanged(Editable s) {
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_tweet);
-       Button btnTweet;
+        Button btnTweet;
+        Button btnCancel;
 
         mEditText = (EditText) findViewById(R.id.etTweet);
         tvCharCount = (TextView) findViewById(R.id.tvCharCount);
@@ -51,15 +53,20 @@ public class ComposeTweetActivity extends AppCompatActivity {
 
         });
 
+        btnCancel = (Button) findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismissActivity();
+            }
+
+        });
+
         mEditText.addTextChangedListener(mTextEditorWatcher);
         client = TwitterApplication.getRestClient();
     }
 
-    private void dimissActivity(View view) {
-        finish();
-    }
-
-    private void dimissActivity() {
+    private void dismissActivity() {
         finish();
     }
 
@@ -78,7 +85,7 @@ public class ComposeTweetActivity extends AppCompatActivity {
                 Log.d("DEBUG", "onFailure statusCode: " + statusCode);
             }
         });
-        dimissActivity();
+        dismissActivity();
     }
 
 }

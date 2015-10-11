@@ -17,7 +17,7 @@
         android:icon="@drawable/ic_profile"
         android:onClick="onProfileView"
         android:orderInCategory="100"
-        android:title="Profile"
+        android:title="@string/label_profile"
         app:showAsAction="ifRoom" />
 
 </menu>

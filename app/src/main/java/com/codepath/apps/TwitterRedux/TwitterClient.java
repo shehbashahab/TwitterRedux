@@ -20,11 +20,11 @@ import org.scribe.builder.api.TwitterApi;
  * 
  */
 public class TwitterClient extends OAuthBaseClient {
-    public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class;
-    public static final String REST_URL = "https://api.twitter.com/1.1";
-    public static final String REST_CONSUMER_KEY = "S8IRBV07UYbjA6wb4Um8Vy7oe";
-    public static final String REST_CONSUMER_SECRET = "lINwkmVamQS9qmVEU6GjSR7PkpyUst0kRnIEyDDdiTe9OHdtKv";
-    public static final String REST_CALLBACK_URL = "oauth://SS-CPTweetsApp";
+    private static final Class<? extends Api> REST_API_CLASS = TwitterApi.class;
+    private static final String REST_URL = "https://api.twitter.com/1.1";
+    private static final String REST_CONSUMER_KEY = "S8IRBV07UYbjA6wb4Um8Vy7oe";
+    private static final String REST_CONSUMER_SECRET = "lINwkmVamQS9qmVEU6GjSR7PkpyUst0kRnIEyDDdiTe9OHdtKv";
+    private static final String REST_CALLBACK_URL = "oauth://SS-CPTweetsApp";
 
     public TwitterClient(Context context) {
         super(context, REST_API_CLASS, REST_URL, REST_CONSUMER_KEY, REST_CONSUMER_SECRET, REST_CALLBACK_URL);
@@ -42,7 +42,7 @@ public class TwitterClient extends OAuthBaseClient {
         getHomeTimeline(handler, params);
     }
 
-    public void getHomeTimeline(AsyncHttpResponseHandler handler, RequestParams params) {
+    private void getHomeTimeline(AsyncHttpResponseHandler handler, RequestParams params) {
         String apiUrl = getApiUrl("statuses/home_timeline.json");
         client.get(apiUrl, params, handler);
     }

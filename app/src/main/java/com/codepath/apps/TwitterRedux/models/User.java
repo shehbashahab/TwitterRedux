@@ -53,10 +53,6 @@ public class User {
         return name;
     }
 
-    public long getUid() {
-        return uid;
-    }
-
     public String getScreenName() {
         return screenName;
     }
