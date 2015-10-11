@@ -3,9 +3,6 @@ package com.codepath.apps.TwitterRedux.models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by shehba.shahab on 9/30/15.
- */
 public class User {
     // list attributes
 

@@ -6,9 +6,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by shehba.shahab on 9/30/15.
- */
 public class Tweet {
 
     private String body;

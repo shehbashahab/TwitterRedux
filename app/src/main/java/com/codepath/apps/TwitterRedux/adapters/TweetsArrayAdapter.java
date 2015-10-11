@@ -62,5 +62,4 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         // 5. Return the view to be inserted into the list
         return convertView;
     }
-
 }

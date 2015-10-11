@@ -46,6 +46,24 @@ public class HomeTimelineFragment extends TweetsListFragment {
         });
     }
 
+    protected void loadMoreTimeline(long max_id) {
+        client.getHomeTimelineWithMaxId(max_id, new JsonHttpResponseHandler() {
+            // SUCCESS
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray json) {
+                Log.d("DEBUG", json.toString());
+                aTweets.addAll(Tweet.fromJSONArray(json));
+            }
+
+            // FAILURE
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                Log.d("DEBUG", "errorResponse: " + errorResponse.toString());
+                Log.d("DEBUG", "onFailure statusCode: " + statusCode);
+            }
+        });
+    }
+
     private void postTweet(String tweetBody) {
         // SUCCESS
         client.postTweet(tweetBody, new JsonHttpResponseHandler() {
