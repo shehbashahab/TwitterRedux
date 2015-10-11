@@ -9,9 +9,14 @@
 
     <Button
         android:id="@+id/btnCancel"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="@string/btnCancel" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:background="@android:color/transparent"
+        android:text="@string/btnCancel"
+        android:textColor="#2196F3" />
 
     <EditText
         android:id="@+id/etTweet"
@@ -37,11 +42,13 @@
         android:id="@+id/tvCharCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
         android:layout_below="@+id/etTweet"
         android:layout_toLeftOf="@+id/btnTweet"
         android:layout_toStartOf="@+id/btnTweet"
-        android:text="New Text"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false" />
+        android:paddingRight="5dp"
+        android:paddingTop="16dp"
+        android:text="140" />
 
 </RelativeLayout>
