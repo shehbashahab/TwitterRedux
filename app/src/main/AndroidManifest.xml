@@ -51,7 +51,9 @@
             android:name="com.codepath.apps.TwitterRedux.activities.TimelineActivity"
             android:label="@string/title_activity_timeline" />
         <activity android:name="com.codepath.apps.TwitterRedux.activities.ProfileActivity" />
-        <activity android:name="com.codepath.apps.TwitterRedux.activities.ComposeTweetActivity"></activity>
+        <activity
+            android:name="com.codepath.apps.TwitterRedux.activities.ComposeTweetActivity"
+            android:label="Compose Tweet"></activity>
     </application>
 
 </manifest>
