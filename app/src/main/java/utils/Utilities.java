@@ -44,6 +44,8 @@ public class Utilities {
         if (span >= DateUtils.HOUR_IN_MILLIS) {
             return (span / DateUtils.HOUR_IN_MILLIS) + ABBR_HOUR;
         }
-        return (span / DateUtils.MINUTE_IN_MILLIS) + ABBR_MINUTE;
+        if (span >= DateUtils.MINUTE_IN_MILLIS) {
+            return (span / DateUtils.MINUTE_IN_MILLIS) + ABBR_MINUTE;
+        } else return (span / DateUtils.SECOND_IN_MILLIS) + "s";
     }
 }
