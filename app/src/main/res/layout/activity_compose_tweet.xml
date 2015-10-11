@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?><!-- fragment_edit_name.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/edit_name"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:weightSum="1">
 
     <Button
         android:id="@+id/btnCancel"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="@string/btnCancel"/>
+        android:text="@string/btnCancel" />
 
-    <TextView
-        android:id="@+id/tvCharCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/etTweet"
+        android:layout_width="match_parent"
+        android:layout_height="301dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/btnCancel"
+        android:gravity="top"
+        android:hint="@string/tweet_instructional_text"
+        android:imeOptions="actionDone"
+        android:scrollbars="vertical" />
 
     <Button
         android:id="@+id/btnTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/etTweet"
         android:text="@string/label_tweet" />
 
-    <EditText
-        android:id="@+id/etTweet"
+    <TextView
+        android:id="@+id/tvCharCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/tweet_instructional_text"
-        android:imeOptions="actionDone"
-        android:inputType="textMultiLine"
-        android:lines="6"
-        android:maxLength="140"
-        android:scrollbars="vertical" />
+        android:layout_below="@+id/etTweet"
+        android:layout_toLeftOf="@+id/btnTweet"
+        android:layout_toStartOf="@+id/btnTweet"
+        android:text="New Text"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false" />
 
-</LinearLayout>
+</RelativeLayout>

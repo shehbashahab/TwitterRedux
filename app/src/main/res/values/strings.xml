@@ -9,7 +9,7 @@
     <string name="label_username">Username</string>
     <string name="label_created_at">Created At</string>
     <string name="label_tweet">Tweet</string>
-    <string name="btnCancel">Cancel</string>
+    <string name="btnCancel">X</string>
     <string name="label_profile">Profile</string>
     <string name="tweet_instructional_text">What\'s happening?</string>
 </resources>

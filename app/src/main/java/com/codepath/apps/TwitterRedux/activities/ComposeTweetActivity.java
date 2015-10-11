@@ -75,7 +75,6 @@ public class ComposeTweetActivity extends AppCompatActivity {
         client.postTweet(tweetBody, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject success) {
-                // Do nothing!
             }
 
             // FAILURE
@@ -87,5 +86,4 @@ public class ComposeTweetActivity extends AppCompatActivity {
         });
         dismissActivity();
     }
-
 }
