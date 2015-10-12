@@ -1,5 +1,6 @@
 package com.codepath.apps.TwitterRedux.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -67,6 +68,8 @@ public class ComposeTweetActivity extends AppCompatActivity {
     }
 
     private void dismissActivity() {
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
         finish();
     }
 

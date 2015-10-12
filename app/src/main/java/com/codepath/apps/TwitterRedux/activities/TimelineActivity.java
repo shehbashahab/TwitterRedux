@@ -57,7 +57,19 @@ public class TimelineActivity extends AppCompatActivity {
 
     public void onComposeTweetActivityView(MenuItem item) {
         Intent i = new Intent(this, ComposeTweetActivity.class);
-        startActivity(i);
+        startActivityForResult(i, 1);
+    }
+
+    /* Called when the second activity's finished */
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode) {
+            case 1:
+                if (resultCode == RESULT_OK) {
+                    Intent i = new Intent(this, ProfileActivity.class);
+                    startActivity(i);
+                }
+                break;
+        }
     }
 
     // Return the order of the fragments in the view pager
