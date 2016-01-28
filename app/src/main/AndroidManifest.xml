@@ -53,7 +53,7 @@
         <activity android:name="com.codepath.apps.TwitterRedux.activities.ProfileActivity" />
         <activity
             android:name="com.codepath.apps.TwitterRedux.activities.ComposeTweetActivity"
-            android:label="Compose Tweet"></activity>
+            android:label="Compose Tweet"/>
     </application>
 
 </manifest>

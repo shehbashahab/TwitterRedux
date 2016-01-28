@@ -1,4 +1,4 @@
-package utils;
+package com.codepath.apps.TwitterRedux.utils;
 
 import android.text.format.DateUtils;
 

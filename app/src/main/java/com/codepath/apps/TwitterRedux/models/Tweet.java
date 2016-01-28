@@ -45,7 +45,6 @@ public class Tweet {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-                continue;//if one fail, continue to next and others
             }
 
         }

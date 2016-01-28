@@ -1,5 +1,10 @@
 package com.codepath.apps.TwitterRedux.activities;
 
+import com.astuetz.PagerSlidingTabStrip;
+import com.codepath.apps.MySimpleTweets.R;
+import com.codepath.apps.TwitterRedux.fragments.HomeTimelineFragment;
+import com.codepath.apps.TwitterRedux.fragments.MentionsTimelineFragment;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,11 +14,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.astuetz.PagerSlidingTabStrip;
-import com.codepath.apps.MySimpleTweets.R;
-import com.codepath.apps.TwitterRedux.fragments.HomeTimelineFragment;
-import com.codepath.apps.TwitterRedux.fragments.MentionsTimelineFragment;
 
 public class TimelineActivity extends AppCompatActivity {
 
@@ -42,14 +42,6 @@ public class TimelineActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return super.onOptionsItemSelected(item);
-    }
-
     public void onProfileView(MenuItem item) {
         Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
@@ -62,7 +54,7 @@ public class TimelineActivity extends AppCompatActivity {
 
     /* Called when the second activity's finished */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch(requestCode) {
+        switch (requestCode) {
             case 1:
                 if (resultCode == RESULT_OK) {
                     Intent i = new Intent(this, ProfileActivity.class);

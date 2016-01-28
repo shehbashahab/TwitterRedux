@@ -1,12 +1,5 @@
 package com.codepath.apps.TwitterRedux.activities;
 
-import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.codepath.apps.MySimpleTweets.R;
 import com.codepath.apps.TwitterRedux.TwitterApplication;
 import com.codepath.apps.TwitterRedux.TwitterClient;
@@ -18,9 +11,15 @@ import com.squareup.picasso.Picasso;
 import org.apache.http.Header;
 import org.json.JSONObject;
 
+import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class ProfileActivity extends AppCompatActivity {
 
-    private TwitterClient client;
     private User user;
     private String username = null;
 
@@ -30,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         username = getIntent().getStringExtra("screen_name");
-        client = TwitterApplication.getRestClient();
+        TwitterClient client = TwitterApplication.getRestClient();
 
         if (username == null) {
             //Get the account info
@@ -94,8 +93,8 @@ public class ProfileActivity extends AppCompatActivity {
         ImageView ivProfile = (ImageView) findViewById(R.id.ivProfile);
 
         Picasso.with(this).load(user.getProfileImageUrl()).into(ivProfile);
-        tvFullName.setText(user.getName().toString());
-        tvBio.setText(user.getTagline().toString());
+        tvFullName.setText(user.getName());
+        tvBio.setText(user.getTagline());
         tvFollowers.setText(String.valueOf(user.getFollowersCount()) + " Followers");
         tvFollowing.setText(String.valueOf(user.getFriendsCount()) + " Following");
     }

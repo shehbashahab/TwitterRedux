@@ -1,4 +1,4 @@
-package utils;
+package com.codepath.apps.TwitterRedux.utils;
 
 /**
  * Created by shehba.shahab on 10/1/15.

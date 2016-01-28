@@ -1,8 +1,5 @@
 package com.codepath.apps.TwitterRedux.fragments;
 
-import android.os.Bundle;
-import android.util.Log;
-
 import com.codepath.apps.TwitterRedux.TwitterApplication;
 import com.codepath.apps.TwitterRedux.TwitterClient;
 import com.codepath.apps.TwitterRedux.models.Tweet;
@@ -11,6 +8,9 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import android.os.Bundle;
+import android.util.Log;
 
 public class UserTimelineFragment extends TweetsListFragment {
 
@@ -53,8 +53,7 @@ public class UserTimelineFragment extends TweetsListFragment {
         });
     }
 
-    protected void loadMoreTimeline(long max_id)
-    {
+    protected void loadMoreTimeline(long max_id) {
         client.getUserTimeline(max_id, screenName, new JsonHttpResponseHandler() {
             // SUCCESS
             @Override

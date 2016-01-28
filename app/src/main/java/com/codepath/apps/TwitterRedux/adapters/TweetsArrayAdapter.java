@@ -1,5 +1,11 @@
 package com.codepath.apps.TwitterRedux.adapters;
 
+import com.codepath.apps.MySimpleTweets.R;
+import com.codepath.apps.TwitterRedux.activities.ProfileActivity;
+import com.codepath.apps.TwitterRedux.models.Tweet;
+import com.codepath.apps.TwitterRedux.utils.Utilities;
+import com.squareup.picasso.Picasso;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,14 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.codepath.apps.MySimpleTweets.R;
-import com.codepath.apps.TwitterRedux.activities.ProfileActivity;
-import com.codepath.apps.TwitterRedux.models.Tweet;
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
-
-import utils.Utilities;
 
 
 // Taking the Tweet objects and turning them into View displayed in the list

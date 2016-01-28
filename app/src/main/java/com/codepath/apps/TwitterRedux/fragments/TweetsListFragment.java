@@ -1,5 +1,10 @@
 package com.codepath.apps.TwitterRedux.fragments;
 
+import com.codepath.apps.MySimpleTweets.R;
+import com.codepath.apps.TwitterRedux.adapters.TweetsArrayAdapter;
+import com.codepath.apps.TwitterRedux.models.Tweet;
+import com.codepath.apps.TwitterRedux.utils.EndlessScrollListener;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,21 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.codepath.apps.MySimpleTweets.R;
-import com.codepath.apps.TwitterRedux.adapters.TweetsArrayAdapter;
-import com.codepath.apps.TwitterRedux.models.Tweet;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import utils.EndlessScrollListener;
-
 public abstract class TweetsListFragment extends Fragment {
 
-    protected SwipeRefreshLayout swipeContainer;
     TweetsArrayAdapter aTweets;
-    ArrayList<Tweet> tweets;
-    private ListView lvTweets;
+    private SwipeRefreshLayout swipeContainer;
+    private ArrayList<Tweet> tweets;
 
     //inflation logic
     @Nullable
@@ -45,7 +43,7 @@ public abstract class TweetsListFragment extends Fragment {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-        lvTweets = (ListView) v.findViewById(R.id.lvTweets);
+        ListView lvTweets = (ListView) v.findViewById(R.id.lvTweets);
         lvTweets.setOnScrollListener(new EndlessScrollListener() {
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
@@ -75,8 +73,7 @@ public abstract class TweetsListFragment extends Fragment {
 
     protected abstract void populateTimeline();
 
-    void clearAdapter()
-    {
+    void clearAdapter() {
         aTweets.clear();
         tweets.clear();
     }

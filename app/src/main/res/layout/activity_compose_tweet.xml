@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?><!-- fragment_edit_name.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/edit_name"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:weightSum="1">
+                android:id="@+id/edit_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:weightSum="1">
 
     <Button
-        android:id="@+id/btnCancel"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="false"
-        android:background="@android:color/transparent"
-        android:text="@string/btnCancel"
-        android:textColor="#2196F3" />
+            android:id="@+id/btnCancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="false"
+            android:background="@android:color/transparent"
+            android:text="@string/btnCancel"
+            android:textColor="#2196F3"/>
 
     <EditText
-        android:id="@+id/etTweet"
-        android:layout_width="match_parent"
-        android:layout_height="301dp"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_below="@+id/btnCancel"
-        android:gravity="top"
-        android:hint="@string/tweet_instructional_text"
-        android:imeOptions="actionDone"
-        android:scrollbars="vertical" />
+            android:id="@+id/etTweet"
+            android:layout_width="match_parent"
+            android:layout_height="301dp"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_below="@+id/btnCancel"
+            android:gravity="top"
+            android:hint="@string/tweet_instructional_text"
+            android:imeOptions="actionDone"
+            android:scrollbars="vertical"/>
 
     <Button
-        android:id="@+id/btnTweet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/etTweet"
-        android:text="@string/label_tweet" />
+            android:id="@+id/btnTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etTweet"
+            android:text="@string/label_tweet"/>
 
     <TextView
-        android:id="@+id/tvCharCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="false"
-        android:layout_below="@+id/etTweet"
-        android:layout_toLeftOf="@+id/btnTweet"
-        android:layout_toStartOf="@+id/btnTweet"
-        android:paddingRight="5dp"
-        android:paddingTop="16dp"
-        android:text="140" />
+            android:id="@+id/tvCharCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false"
+            android:layout_below="@+id/etTweet"
+            android:layout_toLeftOf="@+id/btnTweet"
+            android:layout_toStartOf="@+id/btnTweet"
+            android:paddingRight="5dp"
+            android:paddingTop="16dp"
+            android:text="140"/>
 
 </RelativeLayout>

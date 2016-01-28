@@ -1,13 +1,13 @@
 package com.codepath.apps.TwitterRedux.activities;
 
+import com.codepath.apps.MySimpleTweets.R;
+import com.codepath.apps.TwitterRedux.TwitterClient;
+import com.codepath.oauth.OAuthLoginActionBarActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-
-import com.codepath.apps.MySimpleTweets.R;
-import com.codepath.apps.TwitterRedux.TwitterClient;
-import com.codepath.oauth.OAuthLoginActionBarActivity;
 
 public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 
